@@ -70,8 +70,6 @@ assert.Equal(t, "test-instance", testingTag)
 
 ## To Do
 
-- write an outputs module
-- write an ImportVal etc. overwrite helper function.
-- write an ECS Cluster test. (=> first write a terratest AWS ECS module?)
-- Set Parameters in https://docs.aws.amazon.com/sdk-for-go/api/service/cloudformation/#CreateStackInput
-  to use testing parameters (names, sizes etc.)
+- Outputs & Exports
+- Overwrite Helpers for ImportVal, FindInMap,...
+- Example ECS Cluster Test (=> First terratest AWS ECS part?)

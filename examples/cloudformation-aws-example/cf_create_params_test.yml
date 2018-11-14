@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  TestParameter:
+    Type: String
+    Default: nottest
+    AllowedValues:
+      - nottest
+      - TestParameter
+
+Resources:
+  DummyResource:
+    Type: AWS::CloudFormation::WaitConditionHandle
