@@ -11,6 +11,8 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudformation"
 )
 
+// CreateStack creates the supplied stack
+// throws error
 func CreateStack(t *testing.T, CFOptions *Options) {
 	err := CreateStackE(t, CFOptions)
 	if err != nil {
@@ -23,6 +25,8 @@ func CreateStack(t *testing.T, CFOptions *Options) {
 
 }
 
+// CreateStackE creates the supplied stack
+// returns possible error
 func CreateStackE(t *testing.T, CFOptions *Options) error {
 
 	cwd, _ := os.Getwd()
@@ -38,6 +42,8 @@ func CreateStackE(t *testing.T, CFOptions *Options) error {
 	return nil
 }
 
+// CreateStackStr creates stack from supplied templateBody
+// throws error
 func CreateStackStr(t *testing.T, CFOptions *Options, templateBody string) {
 	err := CreateStackStrE(t, CFOptions, templateBody)
 	if err != nil {
@@ -45,6 +51,8 @@ func CreateStackStr(t *testing.T, CFOptions *Options, templateBody string) {
 	}
 }
 
+// CreateStackStrE creates stack from supplied templateBody
+// returns error
 func CreateStackStrE(t *testing.T, CFOptions *Options, templateBody string) error {
 
 	svc := NewCFClient(t, CFOptions.AWSRegion)

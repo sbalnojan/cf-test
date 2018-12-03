@@ -4,6 +4,7 @@ import (
 	aws_cf "github.com/aws/aws-sdk-go/service/cloudformation"
 )
 
+// Options represents a set of options to create a CF Stack out of.
 type Options struct {
 	CFFile     string              //Path to the Cloudformation template, yes singular currently!
 	StackName  string              //The name of the stack to be.

@@ -9,6 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudformation"
 )
 
+// DeleteStack delets the supplied stack
 func DeleteStack(t *testing.T, CFOptions *Options) {
 	err := DeleteStackE(t, CFOptions)
 	if err != nil {
@@ -20,6 +21,8 @@ func DeleteStack(t *testing.T, CFOptions *Options) {
 	fmt.Println("Deleted stack:", CFOptions.StackName)
 }
 
+// DeleteStackE delets the supplied stack
+// returns possible error
 func DeleteStackE(t *testing.T, CFOptions *Options) error {
 	sess := session.Must(session.NewSession(&aws.Config{
 		Region: aws.String(CFOptions.AWSRegion),

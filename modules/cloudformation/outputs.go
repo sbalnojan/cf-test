@@ -7,10 +7,12 @@ import (
 	aws_cf "github.com/aws/aws-sdk-go/service/cloudformation"
 )
 
+// ListOutputs does nothing
 func ListOutputs(t *testing.T, CFOptions *Options) error {
 	return nil
 }
 
+// ListExports returns a list of Exports of a specified stack
 func ListExports(t *testing.T, CFOptions *Options) []*aws_cf.Export {
 	svc := NewCFClient(t, CFOptions.AWSRegion)
 
