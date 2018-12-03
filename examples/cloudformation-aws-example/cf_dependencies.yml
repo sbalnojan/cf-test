@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  DummyResource:
+    Type: AWS::CloudFormation::WaitConditionHandle
+
+Outputs:
+  TestExport:
+    Description: my description
+    Value: !ImportValue TextExport
+    Export:
+      Name: ImportedTextExport

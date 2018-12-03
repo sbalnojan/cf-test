@@ -52,7 +52,8 @@ func CreateStackStrE(t *testing.T, CFOptions *Options, templateBody string) erro
 	input := &cloudformation.CreateStackInput{
 		TemplateBody: aws.String(templateBody),
 		StackName:    aws.String(CFOptions.StackName),
-		Parameters:   CFOptions.Parameters}
+		Parameters:   CFOptions.Parameters,
+		Capabilities: []*string{aws.String("CAPABILITY_IAM")}}
 
 	fmt.Println("== ", t.Name(), " == Creating stack: ", CFOptions.StackName)
 

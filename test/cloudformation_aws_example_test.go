@@ -19,7 +19,7 @@ func TestCFCreateStack(t *testing.T) {
 	CFOptions := &cloudformation.Options{
 		CFFile:    "../examples/cloudformation-aws-example/cf_create_test.yml",
 		StackName: expectedName,
-		AWSRegion: "us-west-1",
+		AWSRegion: "us-west-2",
 	}
 	defer cloudformation.DeleteStack(t, CFOptions)
 

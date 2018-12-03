@@ -9,4 +9,5 @@ type Options struct {
 	StackName  string              //The name of the stack to be.
 	AWSRegion  string              //AWS Region
 	Parameters []*aws_cf.Parameter //Template Parameters as aws cloudformation sdk params.
+	Regexes    map[string]string   //replace sth in template with sth.
 }
