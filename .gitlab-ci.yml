@@ -1,0 +1,19 @@
+# from https://about.gitlab.com/2017/11/27/go-tools-and-gitlab-how-to-do-continuous-integration-like-a-boss/
+image: golang:1.9
+
+cache:
+  paths:
+    - /apt-cache
+    - /go/src/github.com
+    - /go/src/golang.org
+    - /go/src/google.golang.org
+    - /go/src/gopkg.in
+
+stages:
+  - test
+  - build
+
+lint_code:
+  stage: test
+  script:
+    - make lint
