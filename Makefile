@@ -18,6 +18,9 @@ race: dep ## Run data race detector
 msan: dep ## Run memory sanitizer
 	@go test -msan -short ${PKG_LIST}
 
+before_script:
+	- go get -u github.com/golang/lint/golint/...
+	
 dep: ## Get the dependencies
 	@go get -v -d ./...
 
