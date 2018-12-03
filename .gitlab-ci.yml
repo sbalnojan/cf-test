@@ -13,6 +13,9 @@ stages:
   - test
   - build
 
+before_script:
+  - make before_script
+
 lint_code:
   stage: test
   script:
